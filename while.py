@@ -3,17 +3,16 @@
 base_question = {"Как дела?": "Хорошо!", "Что делаешь?": "Программирую"}
 
 
-def ask_user(list_question):
+def ask_user(questions):
     bot_response = ''
     while True:
         user_input = input(">").lower()
-        print(user_input)
-        for bot_answer in list_question:
+        for question in questions:
             if user_input == 'пока':
                 print('Прощай')
                 return
-            elif user_input == bot_answer.lower():
-                bot_response = (list_question[bot_answer])
+            elif user_input == question.lower():
+                bot_response = (questions[question])
                 break
             else:
                 bot_response = 'Не знаю'
